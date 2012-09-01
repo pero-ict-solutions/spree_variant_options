@@ -7,5 +7,5 @@ Spree::Core::Engine.routes.append do
       end
     end
   end
-  
+
 end
