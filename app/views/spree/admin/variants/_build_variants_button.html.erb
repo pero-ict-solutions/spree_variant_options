@@ -1,4 +1,4 @@
-<% if current == "Variants" %>
+<% if current == "Variants" and @product.variants.count == 0 %>
 <div class="toolbar" data-hook="toolbar">
   <ul class="actions">
     <li id="build_variants_link">
