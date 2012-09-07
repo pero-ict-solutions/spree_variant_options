@@ -31,3 +31,10 @@ Deface::Override.new(:virtual_path   => "spree/admin/option_types/edit",
                      :insert_after   => "span#new_add_option_value",
                      :partial        => "spree/admin/option_types/multiple_upload_values",
                      :disabled       => false)
+
+
+Deface::Override.new(:virtual_path   => "spree/admin/shared/_product_tabs",
+                     :name           => "add_build_variants_button",
+                     :insert_before  => "h1",
+                     :partial        => "spree/admin/variants/build_variants_button",
+                     :disabled       => false)
