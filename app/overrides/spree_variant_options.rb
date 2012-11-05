@@ -19,8 +19,14 @@ Deface::Override.new(:virtual_path   => "spree/admin/option_types/edit",
 Deface::Override.new(:virtual_path   => "spree/admin/option_types/edit",
                      :name           => "admin_sortable_option_values",
                      :set_attributes => "table.index",
-                     :attributes     => { 
+                     :attributes     => {
                        "class"              => "index sortable",
                        "data-sortable-link" => "/admin/option_values/update_positions"
                      },
+                     :disabled       => false)
+
+Deface::Override.new(:virtual_path   => "spree/admin/variants/index",
+                     :name           => "add_option_type_value_filter_headers",
+                     :insert_before  => "table.index",
+                     :partial        => "spree/admin/variants/filters",
                      :disabled       => false)
