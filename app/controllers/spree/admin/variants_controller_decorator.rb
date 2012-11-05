@@ -1,5 +1,12 @@
 Spree::Admin::VariantsController.class_eval do
 
+  def update_multiple
+    @variants = Spree::Variant.update(params[:variants].keys, params[:variants].values)
+    flash[:notice] = "Updated variants"
+    @product = Spree::Product.find_by_permalink(params[:product_id])
+    redirect_to admin_product_variants_path(@product)
+  end
+
   def collection
 
     @deleted = (params.key?(:deleted) && params[:deleted] == "on") ? "checked" : ""
@@ -15,8 +22,6 @@ Spree::Admin::VariantsController.class_eval do
       @selected_option_types = @option_values.collect(&:option_type)
       @collection = parent.variants_for_option_values(@option_values)
     end
-
-
     @collection
   end
 
