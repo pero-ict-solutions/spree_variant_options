@@ -30,3 +30,16 @@ Deface::Override.new(:virtual_path   => "spree/admin/variants/index",
                      :insert_before  => "table.index",
                      :partial        => "spree/admin/variants/filters",
                      :disabled       => false)
+
+Deface::Override.new(:virtual_path   => "spree/admin/option_types/edit",
+                     :name           => "multiple_option_values_upload",
+                     :insert_after   => "span#new_add_option_value",
+                     :partial        => "spree/admin/option_types/multiple_upload_values",
+                     :disabled       => false)
+
+Deface::Override.new(:virtual_path   => "spree/admin/shared/_product_tabs",
+                     :name           => "add_build_variants_button",
+                     :insert_before  => "h1",
+                     :partial        => "spree/admin/variants/build_variants_button",
+                     :disabled       => false)
+
