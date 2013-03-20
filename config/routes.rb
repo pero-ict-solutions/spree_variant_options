@@ -11,6 +11,7 @@ Spree::Core::Engine.routes.append do
       resources :variants do
         collection do
           post :generate_for_option_types
+          post :delete_all
           post :update_multiple
         end
       end

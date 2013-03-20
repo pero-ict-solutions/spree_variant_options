@@ -37,4 +37,10 @@ Spree::Admin::VariantsController.class_eval do
     redirect_to collection_url, :notice => "generated all the variants"
   end
 
+  def delete_all
+     product = Spree::Product.find_by_permalink(params[:product_id])
+     product.variants.destroy_all
+     redirect_to collection_url, :notice => "All variants are deleted"
+  end
+
 end
