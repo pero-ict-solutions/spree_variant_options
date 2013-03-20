@@ -14,7 +14,7 @@ Spree::Admin::VariantsController.class_eval do
     if @deleted.blank?
       @collection ||= super
     else
-      @collection ||= Variant.where(:product_id => parent.id).deleted
+      @collection ||= Spree::Variant.where(:product_id => parent.id).deleted
     end
 
     if params.key?(:option_values)
