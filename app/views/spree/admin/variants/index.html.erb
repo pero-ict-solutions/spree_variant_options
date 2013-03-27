@@ -10,6 +10,12 @@
       <th width="50"><%= t(:price) %></th>
       <th width="50"><%= t(:sku) %></th>
       <th width="50"><%= t(:on_hand) %></th>
+
+      <th width="50"><%= t(:height) %>(cm)</th>
+      <th width="50"><%= t(:weight) %>(g)</th>
+      <th width="50"><%= t(:width) %>(cm)</th>
+      <th width="50"><%= t(:depth) %>(cm)</th>
+
       <th><%= t(:action) %></th>
     </tr>
     <tbody>
@@ -21,7 +27,11 @@
         <td><span class="handle"></span> <%= variant.options_text %></td>
         <td><%= f.text_field :price, :value => number_to_currency(variant.price, :unit => ''), :size => 8 %></td>
         <td><%= f.text_field :sku, :value => variant.sku, :size => 10 %></td>
-        <td><%= f.text_field :on_hand, :value => variant.on_hand, :size => 10 %></td>
+        <td><%= f.text_field :on_hand, :value => variant.on_hand, :size => 5 %></td>
+        <td><%= f.text_field :height, :value => variant.height, :size => 5 %></td>
+        <td><%= f.text_field :weight, :value => variant.weight, :size => 5 %></td>
+        <td><%= f.text_field :width, :value => variant.width, :size => 5 %></td>
+        <td><%= f.text_field :depth, :value => variant.depth, :size => 5 %></td>
         <td valign="top">
           <%= link_to_edit(variant) unless variant.deleted? %>
           &nbsp;
