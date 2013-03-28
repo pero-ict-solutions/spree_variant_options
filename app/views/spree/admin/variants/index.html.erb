@@ -5,7 +5,7 @@
   <table class="index sortable" data-sortable-link="<%= update_positions_admin_product_variants_path(@product) %>">
     <tr data-hook="variants_header">
       <th><%= t(:options) %></th>
-      <th width="50"><%= link_to t(:price), "#", onclick => "setAll('price');return false;"%></th>
+      <th width="50"><%= link_to t(:price), "#", :onclick => "setAll('price');return false;"%></th>
       <th width="50"><%= t(:sku) %></th>
       <th width="50"><%= t(:on_hand) %></th>
 
