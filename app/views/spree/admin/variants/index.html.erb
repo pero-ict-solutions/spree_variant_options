@@ -13,9 +13,7 @@
       <th width="50"><%= link_to "#{t(:width)} (cm)", '#', :onclick => "setAll('width');return false;" %></th>
       <th width="50"><%= link_to "#{t(:depth)} (cm)", '#', :onclick => "setAll('depth');return false;" %></th>
       <th width="50"><%= link_to "#{t(:weight)} (g)", '#', :onclick => "setAll('weight');return false;" %></th>
-
-
-      <th><%= t(:action) %></th>
+      <th class="action_header"><%= t(:action) %></th>
     </tr>
     <tbody>
     <% @variants.each do |variant| %>
@@ -31,7 +29,7 @@
         <td><%= f.text_field :width, :value => variant.width, :size => 5, :class => "variant_width" %></td>
         <td><%= f.text_field :depth, :value => variant.depth, :size => 5, :class => "variant_depth" %></td>
         <td><%= f.text_field :weight, :value => variant.weight, :size => 5, :class => "variant_weight" %></td>
-        <td valign="top">
+        <td class="action_row" valign="top">
           <%= link_to_edit(variant) unless variant.deleted? %>
           &nbsp;
           <%= link_to_delete(variant) unless variant.deleted? %>
